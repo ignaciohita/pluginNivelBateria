@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="pro.hita.nivelBateria" version="1.0.0">
+        <name>pluginNivelBateria</name>
+        <description>Cálculo del nivel de batería del dispositivo</description>
+        <author>Jose Ignacio Hita Barraza - ignaciohita@gmail.com</author>
+        <keywords>battery level, battery</keywords>
+        <license>MIT</license>
+        <info>Ejemplo del libro: un plugin sencillo que devuelve el nivel de batería en dispositivos iOS y Android</info>
+
+        <engines>
+            <engine name="cordova" version=">=3.0.0" />
+        </engines>
+
+        <js-module src="src/main.js" name="bateria">
+            <clobbers target="bateria" />
+        </js-module>
+
+        <!-- android -->
+        <platform name="android">
+            <config-file target="res/xml/config.xml" parent="/*">
+                <feature name="NivelBateria">
+                    <param name="android-package" value="pro.hita.nivelBateria.NivelBateria" />
+                </feature>
+            </config-file>
+
+            <config-file target="AndroidManifest.xml" parent="/*">
+                <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            </config-file>
+
+            <source-file src="src/android/NivelBateria.java" target-dir="src/pro/hita/nivelBateria/" />
+        </platform>
+
+        <!-- ios -->
+        <platform name="ios">
+            <config-file target="config.xml" parent="/*">
+                <feature name="NivelBateria">
+                    <param name="ios-package" value="NivelBateria" />
+                </feature>
+            </config-file>
+
+            <header-file src="src/ios/NivelBateria.h" />
+            <source-file src="src/ios/NivelBateria.m" />
+        </platform>
+    </plugin>

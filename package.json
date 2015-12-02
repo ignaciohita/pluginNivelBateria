@@ -1,5 +1,5 @@
 {
-    "name": "sorteoLoteria",
+    "name": "pluginNivelBateria",
     "version": "1.0.0",
     "description": "Ejemplo del libro: un plugin sencillo que devuelve el nivel de batería en dispositivos iOS y Android",
     "author": "Jose Ignacio Hita Barraza <ignaciohita@gmail.com>",
@@ -13,7 +13,7 @@
         "test": "",
         "predeploy": ""
     },
-    "main": "www/main.js",
+    "main": "src/main.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/ignaciohita/pluginNivelBateria.git"
